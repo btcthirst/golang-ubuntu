@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"os"
 	"time"
 )
 
@@ -23,11 +22,8 @@ func getPots(n string, i int) {
 }
 
 func wrFile(nf string, dt []byte) {
-	f, err := os.Create(nf)
-	if err != nil {
-		panic(err)
-	}
-	f.WriteString(string(dt))
+	ioutil.WriteFile(nf, dt, 0777)
+
 }
 
 func main() {
