@@ -18,7 +18,7 @@ func getPots(n string, i int) {
 
 	body, err := ioutil.ReadAll(conn.Body)
 
-	nameFile := fmt.Sprintf("./test%d.txt", i)
+	nameFile := fmt.Sprintf("./posts/test%d.txt", i)
 
 	wrFile(nameFile, body)
 }
